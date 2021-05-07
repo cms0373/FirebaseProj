@@ -12,7 +12,6 @@ class UserController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func LogoutBtn(_ sender: Any) {

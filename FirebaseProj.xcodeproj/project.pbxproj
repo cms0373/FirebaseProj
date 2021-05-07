@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		827B0E3B4B6E7D568B19E225 /* Pods_FirebaseProj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401931BF5D856F8E0D16A129 /* Pods_FirebaseProj.framework */; };
+		9400FB032643FC87005569DE /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9400FB022643FC87005569DE /* ProductListTableViewController.swift */; };
 		9410CB5626204D1300256BE3 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410CB5526204D1300256BE3 /* UserDTO.swift */; };
 		9424B29C26203FB1006EFC7B /* UploadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9424B29B26203FB1006EFC7B /* UploadController.swift */; };
 		9451A22126202E090044706B /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451A22026202E090044706B /* UserController.swift */; };
 		9455B9FD263F9DB500A05CE9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9455B9FC263F9DB500A05CE9 /* DetailViewController.swift */; };
+		9455BA0426401E5B00A05CE9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9455BA0326401E5B00A05CE9 /* SignUpViewController.swift */; };
 		945B58F6261FF40A00A5546A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B58F5261FF40A00A5546A /* AppDelegate.swift */; };
 		945B58F8261FF40A00A5546A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B58F7261FF40A00A5546A /* SceneDelegate.swift */; };
 		945B58FA261FF40A00A5546A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B58F9261FF40A00A5546A /* ViewController.swift */; };
@@ -25,10 +27,12 @@
 /* Begin PBXFileReference section */
 		2EF9E3A14C1500F3462D6775 /* Pods-FirebaseProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseProj.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseProj/Pods-FirebaseProj.debug.xcconfig"; sourceTree = "<group>"; };
 		401931BF5D856F8E0D16A129 /* Pods_FirebaseProj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseProj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9400FB022643FC87005569DE /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
 		9410CB5526204D1300256BE3 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		9424B29B26203FB1006EFC7B /* UploadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadController.swift; sourceTree = "<group>"; };
 		9451A22026202E090044706B /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		9455B9FC263F9DB500A05CE9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9455BA0326401E5B00A05CE9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		945B58F2261FF40A00A5546A /* FirebaseProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		945B58F5261FF40A00A5546A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		945B58F7261FF40A00A5546A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 				945B58F7261FF40A00A5546A /* SceneDelegate.swift */,
 				945B58F9261FF40A00A5546A /* ViewController.swift */,
 				945B58FB261FF40A00A5546A /* Main.storyboard */,
+				9400FB022643FC87005569DE /* ProductListTableViewController.swift */,
 				9424B29B26203FB1006EFC7B /* UploadController.swift */,
 				9451A22026202E090044706B /* UserController.swift */,
 				945B58FE261FF40C00A5546A /* Assets.xcassets */,
@@ -88,6 +93,7 @@
 				9410CB5526204D1300256BE3 /* UserDTO.swift */,
 				94B3FB2D262056C50085216A /* TableListController.swift */,
 				9455B9FC263F9DB500A05CE9 /* DetailViewController.swift */,
+				9455BA0326401E5B00A05CE9 /* SignUpViewController.swift */,
 			);
 			path = FirebaseProj;
 			sourceTree = "<group>";
@@ -227,9 +233,11 @@
 				945B58FA261FF40A00A5546A /* ViewController.swift in Sources */,
 				9424B29C26203FB1006EFC7B /* UploadController.swift in Sources */,
 				9451A22126202E090044706B /* UserController.swift in Sources */,
+				9400FB032643FC87005569DE /* ProductListTableViewController.swift in Sources */,
 				94B3FB2E262056C50085216A /* TableListController.swift in Sources */,
 				945B58F6261FF40A00A5546A /* AppDelegate.swift in Sources */,
 				9410CB5626204D1300256BE3 /* UserDTO.swift in Sources */,
+				9455BA0426401E5B00A05CE9 /* SignUpViewController.swift in Sources */,
 				945B58F8261FF40A00A5546A /* SceneDelegate.swift in Sources */,
 				9455B9FD263F9DB500A05CE9 /* DetailViewController.swift in Sources */,
 			);

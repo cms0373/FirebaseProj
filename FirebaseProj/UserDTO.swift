@@ -7,11 +7,21 @@
 
 import UIKit
 
-@objcMembers
+//@objcMembers
 class UserDTO: NSObject {
     var uid: String?
     var userID: String?
     var subject: String?
-    var explanation: String?
+    var context: String?
     var imageUrl: String?
+    var productImage: UIImage?
+    var imageName: String?
+    
+    var uploadTime: String?
+    var uploadPos: String?
+    
+    var category: String?
+    var period: String?
+    var starCount: NSNumber?
+    var stars: [String:Bool]?
 }
