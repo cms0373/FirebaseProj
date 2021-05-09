@@ -15,7 +15,6 @@ class DetailViewController: UIViewController {
     var uidArray: [String] = []
     var targetPath: Int = 0
  
- 
     @IBOutlet weak var productImg: UIImageView!
     @IBOutlet weak var productTitle: UILabel!
     @IBOutlet weak var productContent: UILabel!
@@ -25,17 +24,29 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var starBtn: UIButton!
     
+    var isStar: Bool = false
+    var isServer: Bool = false
     
     
     @IBAction func clickStarBtn(_ sender: Any) {
         
-        print("버튼을 눌렀습니다")
-        
         starBtn.tag = targetPath
+        
         
         starBtn.addTarget(self, action: #selector(likeBtn(_:)), for: .touchUpInside)
         
-        //지금 스타 찍혀있으면
+        print("버튼 클릭")
+        if isServer == true {
+            if isStar == false {
+                print("스타로 바꾼다")
+                starBtn.setImage(UIImage(systemName: "star.fill"), for: .normal)
+                
+            } else {
+                print("빈스타로 바꾼다")
+                starBtn.setImage(UIImage(systemName: "star"), for: .normal)
+            }
+        }
+        /*
         if starBtn.currentImage == UIImage(systemName: "star") {
             starBtn.setImage(UIImage(systemName: "star.fill"), for: .normal)
             
@@ -45,11 +56,12 @@ class DetailViewController: UIViewController {
             starBtn.setImage(UIImage(systemName: "star"), for: .normal)
             print(like.text)
         }
+         */
         
     }
     
     @objc func likeBtn(_ sender: UIButton) {
-        print("왜 이건 작동안하지?")
+        self.isServer = true
         Database.database().reference().child("users").child(self.uidArray[sender.tag]).runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
           if var post = currentData.value as? [String : AnyObject], let uid = Auth.auth().currentUser?.uid {
             var stars: Dictionary<String, Bool>
@@ -60,11 +72,13 @@ class DetailViewController: UIViewController {
                 starCount -= 1
                 stars.removeValue(forKey: uid)
                 print("unstar!!!")
+                self.isStar = false
             } else {
                 // Star the post and add self to stars
                 starCount += 1
                 stars[uid] = true
                 print("star")
+                self.isStar = true
             }
             post["starCount"] = starCount as AnyObject?
             post["stars"] = stars as AnyObject?
@@ -81,22 +95,52 @@ class DetailViewController: UIViewController {
           }
         }
     }
-    
+    @objc func MoreInfo(_ sender: UIButton) {
+        print("more BTn")
+        let alert = UIAlertController(title: "Edit", message: "옵션을 선택하세요", preferredStyle: .actionSheet)
+ 
+        alert.addAction(UIAlertAction(title: "수정", style: .default, handler: { UIAlertAction in
+            return
+        }))
+        
+        alert.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { UIAlertAction in
+            return
+        }))
+        
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if info.uid == Auth.auth().currentUser?.uid {
+            print("It's my post!")
+            let moreBtn = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(MoreInfo(_ :)))
+            self.navigationItem.rightBarButtonItem = moreBtn
+        }
+        //수정, 삭제 버튼
+        
+        
+        
+        
         
         
         
         //starbtn 부분
         if let currentLike = info.starCount?.intValue {
-            like.text = "☆\(currentLike)"
+            like.text = "☆ \(currentLike)"
         }
         
         //만약 현재 like 가 찍혀있다면
-        if info.stars?[info.uid!] ==  true {
+        let userID = Auth.auth().currentUser?.uid
+        print(userID,"유저 아이디입니다")
+
+        if info.stars?[userID!] ==  true {
             print("즐겨찾기 이미 찍혀있음")
             starBtn.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            isStar = true
         } else {
             print("즐겨찾기 안찍혀있음")
             starBtn.setImage(UIImage(systemName: "star"), for: .normal)
@@ -121,9 +165,7 @@ class DetailViewController: UIViewController {
         productContent.text = info.context
       
  
-        if info.uid == Auth.auth().currentUser?.uid {
-            print("It's my post!")
-        }
+        
 
     }
     

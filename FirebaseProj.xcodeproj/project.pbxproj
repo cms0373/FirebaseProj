@@ -11,6 +11,7 @@
 		9400FB032643FC87005569DE /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9400FB022643FC87005569DE /* ProductListTableViewController.swift */; };
 		9410CB5626204D1300256BE3 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410CB5526204D1300256BE3 /* UserDTO.swift */; };
 		9424B29C26203FB1006EFC7B /* UploadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9424B29B26203FB1006EFC7B /* UploadController.swift */; };
+		942BDBD82647EC4A00AADAC2 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942BDBD72647EC4A00AADAC2 /* ChatTableViewController.swift */; };
 		9451A22126202E090044706B /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451A22026202E090044706B /* UserController.swift */; };
 		9455B9FD263F9DB500A05CE9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9455B9FC263F9DB500A05CE9 /* DetailViewController.swift */; };
 		9455BA0426401E5B00A05CE9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9455BA0326401E5B00A05CE9 /* SignUpViewController.swift */; };
@@ -30,6 +31,7 @@
 		9400FB022643FC87005569DE /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
 		9410CB5526204D1300256BE3 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		9424B29B26203FB1006EFC7B /* UploadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadController.swift; sourceTree = "<group>"; };
+		942BDBD72647EC4A00AADAC2 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
 		9451A22026202E090044706B /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		9455B9FC263F9DB500A05CE9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9455BA0326401E5B00A05CE9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				945B58F7261FF40A00A5546A /* SceneDelegate.swift */,
 				945B58F9261FF40A00A5546A /* ViewController.swift */,
 				945B58FB261FF40A00A5546A /* Main.storyboard */,
+				942BDBD72647EC4A00AADAC2 /* ChatTableViewController.swift */,
 				9400FB022643FC87005569DE /* ProductListTableViewController.swift */,
 				9424B29B26203FB1006EFC7B /* UploadController.swift */,
 				9451A22026202E090044706B /* UserController.swift */,
@@ -236,6 +239,7 @@
 				9400FB032643FC87005569DE /* ProductListTableViewController.swift in Sources */,
 				94B3FB2E262056C50085216A /* TableListController.swift in Sources */,
 				945B58F6261FF40A00A5546A /* AppDelegate.swift in Sources */,
+				942BDBD82647EC4A00AADAC2 /* ChatTableViewController.swift in Sources */,
 				9410CB5626204D1300256BE3 /* UserDTO.swift in Sources */,
 				9455BA0426401E5B00A05CE9 /* SignUpViewController.swift in Sources */,
 				945B58F8261FF40A00A5546A /* SceneDelegate.swift in Sources */,

@@ -13,6 +13,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var pwField: UITextField!
     @IBOutlet weak var pwAgainField: UITextField!
+    @IBOutlet weak var backBtn: UIButton!
     
     
     override func viewDidLoad() {
@@ -26,7 +27,12 @@ class SignUpViewController: UIViewController {
         self.pwField.text = ""
         self.pwAgainField.text = ""
     }
-    
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true) {
+            self.ClearTextField()
+        }
+    }
+
     @IBAction func signUpButton(_ sender: Any) {
         
         if pwField.text!.count < 6 {

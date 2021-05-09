@@ -23,6 +23,7 @@ class TableListController: UIViewController {
 
             for child in DataSnapshot.children {
                 let fchild = child as! DataSnapshot
+                print("데이터다운받는다",fchild)
                 if let dictionary = fchild.value as? [String: Any] {
                     //print("dic:" , dictionary)
                     print("download data from server")
@@ -109,7 +110,7 @@ extension TableListController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath)
-        
+        cell.selectionStyle = .none
         let target = array[indexPath.row]
         
         if let productTitle = cell.viewWithTag(200) as? UILabel {
@@ -144,19 +145,7 @@ extension TableListController: UITableViewDelegate, UITableViewDataSource {
         }
         
         
-        /*
-        if let img = cell.viewWithTag(100) as? UIImageView {
-            let data = try? Data(contentsOf: URL(string: array[indexPath.row].imageUrl!)!)
-            img.image = UIImage(data: data!)
-            array[indexPath.row].productImage = img.image
-        }
-        */
-        /*
-        if let star = cell.viewWithTag(300) as? UIButton {
-            star.tag = indexPath.row
-            star.addTarget(self, action: #selector(like(_:)), for: .touchUpInside)
-        }
-        */
+
  
         print("cell을 표시합니다..")
         

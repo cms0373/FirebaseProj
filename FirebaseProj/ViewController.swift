@@ -13,11 +13,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var logoImg: UIImageView!
+    
+    
     
     func ClearTextField() {
         email.text = ""
         password.text = ""
     }
+    
     //로그인 기능 구현
     @IBAction func SignIn(_ sender: Any) {
         Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
@@ -41,36 +45,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 })
             }
         }
-        /*
-        Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
-            
-            if error != nil {
-                Auth.auth().signIn(withEmail: self.email.text!, password: self.password.text!) { (user, error) in
-                    
-                }
-            } else {
-                let alert = UIAlertController(title: "알림", message: "회원가입완료", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
-                
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
-        */
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("첫화면을 로딩합니다")
         
-        /*
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            if user != nil {
-                print("뷰 전환을 하게따아아아아아")
-                self.performSegue(withIdentifier: "Home", sender: nil)
-            }
-        }
-         */
+        logoImg.image = UIImage(named: "logoImg.png")
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -81,6 +65,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         }
     }
+    
     
     
  

@@ -1,47 +1,40 @@
 //
-//  ProductListTableViewController.swift
+//  ChatTableViewController.swift
 //  FirebaseProj
 //
-//  Created by 김도연 on 2021/05/06.
+//  Created by 김도연 on 2021/05/09.
 //
 
 import UIKit
 
-class ProductListTableViewController: UITableViewController {
-    var category: [String] = ["공구", "디지털/가전", "스포츠", "게임", "생활필수", "도서", "기타.."]
-    
-    
+class ChatTableViewController: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
 
     }
 
     // MARK: - Table view data source
 
+    override func numberOfSections(in tableView: UITableView) -> Int {
 
+        return 0
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return category.count
+
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        cell.textLabel?.text = category[indexPath.row]
+        // Configure the cell...
+
         return cell
     }
-    
-    var completionHandler: ((String) -> (String))?
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        _ = completionHandler?(self.category[indexPath.row] ?? "")
-        self.navigationController?.popViewController(animated: true)
-    }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.

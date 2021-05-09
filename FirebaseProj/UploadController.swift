@@ -24,12 +24,21 @@ class UploadController: UIViewController, UIImagePickerControllerDelegate, UINav
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("뷰 윌 어피얼")
- 
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //productImg 부분
+        imageView.layer.borderWidth = 1.0
+        imageView.layer.borderColor = UIColor.gray.cgColor
+        
+        
+        
+        //context 부분
+        context.layer.borderWidth = 1.0
+        context.layer.borderColor = UIColor.gray.cgColor
+        
         
         categoryText.isUserInteractionEnabled = false
         //borrowPeriod.isUserInteractionEnabled = false
@@ -84,6 +93,38 @@ class UploadController: UIViewController, UIImagePickerControllerDelegate, UINav
     }
     
     func upload() {
+        
+        
+        if self.imageView.image == UIImage(systemName: "plus.viewfinder") || self.subject.text == "" || self.categoryText.text == "" || self.borrowPeriod.text == "" {
+            
+            var emptyInfo: String = ""
+    
+            
+            if self.imageView.image == nil {
+                emptyInfo += "물품 이미지\n"
+            }
+            
+            if self.subject.text == "" {
+                emptyInfo += "물품 제목\n"
+            }
+
+            if self.categoryText.text == "" {
+                emptyInfo += "물품 카테고리\n"
+            }
+            if self.borrowPeriod.text == "" {
+                emptyInfo += "물품 대여가능기간\n"
+            }
+            emptyInfo += "을(를) 채워주세요"
+            
+            let alert = UIAlertController(title: "빠진 정보가 있습니다", message: emptyInfo, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            return
+        }
+        
+        
         let image = self.imageView.image?.jpegData(compressionQuality: 0.1)
         
         let imageName = Auth.auth().currentUser!.uid + "\(Int(NSDate.timeIntervalSinceReferenceDate * 1000)).jpg"
