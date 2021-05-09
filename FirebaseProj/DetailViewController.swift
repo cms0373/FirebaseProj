@@ -46,17 +46,7 @@ class DetailViewController: UIViewController {
                 starBtn.setImage(UIImage(systemName: "star"), for: .normal)
             }
         }
-        /*
-        if starBtn.currentImage == UIImage(systemName: "star") {
-            starBtn.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            
-            print(like.text)
-            
-        } else {    //안찍혀있으면
-            starBtn.setImage(UIImage(systemName: "star"), for: .normal)
-            print(like.text)
-        }
-         */
+
         
     }
     
